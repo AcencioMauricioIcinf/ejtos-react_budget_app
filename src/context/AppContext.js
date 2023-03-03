@@ -89,6 +89,13 @@ const initialState = {
     currency: '£'
 };
 
+const currencies = [
+    { name: 'Dollar', symbol: '$' },
+    { name: 'Pound', symbol: '£' },
+    { name: 'Euro', symbol: '€' },
+    { name: 'Ruppee', symbol: '₹' },
+]
+
 // 2. Creates the context this is the thing our components import and use to get the state
 export const AppContext = createContext();
 
@@ -109,6 +116,7 @@ export const AppProvider = (props) => {
     return (
         <AppContext.Provider
             value={{
+                currencies,
                 expenses: state.expenses,
                 budget: state.budget,
                 remaining: remaining,
