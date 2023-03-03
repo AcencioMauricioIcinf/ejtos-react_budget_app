@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { dispatch, budget, maxBudget, expenses } = useContext(AppContext);
+    const { dispatch, budget, maxBudget, expenses, currency } = useContext(AppContext);
 
     const changeBudget = (newBudget) => {
         if (newBudget > maxBudget) {
@@ -23,7 +23,7 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £
+            <span>Budget: {currency}
                 <input
                     required='required'
                     type='number'
